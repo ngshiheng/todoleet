@@ -1,4 +1,7 @@
+export const TODOIST_API_TOKEN = process.env.TODOIST_API_TOKEN
+
 export const TODOIST_API_ENDPOINT = 'https://api.todoist.com/rest/v1'
+
 export const LEETCODE_API_ENDPOINT = 'https://leetcode.com/graphql'
 
 export const DAILY_CODING_CHALLENGE_QUERY = `
