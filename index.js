@@ -1,12 +1,12 @@
-addEventListener('fetch', event => {
-  event.respondWith(handleRequest(event.request))
+const LEETCODE_API_ENDPOINT = 'https://leetcode.com/graphql'
+const TODOIST_API_ENDPOINT = 'https://api.todoist.com/rest/v1'
+
+addEventListener('scheduled', event => {
+    event.waitUntil(syncLeetCodeCodingChallenge(event))
 })
-/**
- * Respond with hello worker text
- * @param {Request} request
- */
-async function handleRequest(request) {
-  return new Response('Hello worker!', {
-    headers: { 'content-type': 'text/plain' },
-  })
-}
+
+const fetchDailyCodingChallenge = async () => {}
+
+const syncLeetCodeCodingChallenge = async event => {}
+
+const createTodoistTask = async () => {}
