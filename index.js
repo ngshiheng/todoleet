@@ -2,7 +2,6 @@ import {
     DAILY_CODING_CHALLENGE_QUERY,
     LEETCODE_API_ENDPOINT,
     TODOIST_API_ENDPOINT,
-    TODOIST_API_TOKEN,
 } from './const'
 
 /**
@@ -39,11 +38,11 @@ const createTodoistTask = async question => {
 
     const init = {
         method: 'POST',
+        body: JSON.stringify(body),
         headers: {
-            'content-type': 'application/json',
+            'Content-Type': 'application/json;charset=UTF-8',
             Authorization: `Bearer ${TODOIST_API_TOKEN}`,
         },
-        body: JSON.stringify(body),
     }
 
     const response = await fetch(`${TODOIST_API_ENDPOINT}/tasks`, init)

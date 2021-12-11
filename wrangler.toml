@@ -8,4 +8,4 @@ zone_id = ""
 compatibility_date = "2021-12-11"
 
 [triggers]
-crons = ["1 * * * *"]
+crons = ["1 0 * * *"]
