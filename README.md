@@ -2,6 +2,8 @@
 
 A [Cloudflare Worker](https://developers.cloudflare.com/workers/) project that syncs LeetCode daily coding challenge to your [Todoist](https://todoist.com/).
 
+The worker runs every day at at [00:01 UTC](https://crontab.guru/#1_0_*_*_*) and syncs the daily coding challenge to your Todoist.
+
 [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/ngshiheng/todoleet)
 
 ## Requirements
@@ -44,3 +46,8 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 4. Commit your changes (`git commit -am 'feat: Add some fooBar'`, make sure that your commits are [semantic](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716))
 5. Push to the branch (`git push origin feature/fooBar`)
 6. Create a new Pull Request
+
+## References
+
+-   https://developer.todoist.com/guides/
+-   https://developers.cloudflare.com/workers/
