@@ -2,7 +2,7 @@
   "private": true,
   "name": "todoleet",
   "version": "1.0.0",
-  "description": "A template for kick starting a Cloudflare Workers project",
+  "description": "Sync LeetCode daily coding challenge to Todoist",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
