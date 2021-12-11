@@ -8,6 +8,12 @@ A Cloudflare Worker project that syncs LeetCode daily coding challenge to your T
 
 Install [Wrangler](https://github.com/cloudflare/wrangler#installation) CLI
 
+## Environment
+
+```sh
+export TODOLIST_API_TOKEN=xxxxxxx
+```
+
 ## Installation
 
 The dependencies are only used for development. So the installation is not required.

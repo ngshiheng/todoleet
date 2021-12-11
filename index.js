@@ -2,6 +2,7 @@ import {
     DAILY_CODING_CHALLENGE_QUERY,
     LEETCODE_API_ENDPOINT,
     TODOIST_API_ENDPOINT,
+    TODOIST_API_TOKEN,
 } from './const'
 
 /**
@@ -9,7 +10,7 @@ import {
  */
 const syncLeetCodeCodingChallenge = async event => {
     const question = await fetchDailyCodingChallenge()
-    createTodoistTask(question)
+    await createTodoistTask(question)
 }
 
 const fetchDailyCodingChallenge = async () => {
@@ -24,22 +25,28 @@ const fetchDailyCodingChallenge = async () => {
 }
 
 const createTodoistTask = async question => {
-    const questionTitle = question.data.activeDailyCodingChallengeQuestion.title
+    const questionTitle =
+        question.data.activeDailyCodingChallengeQuestion.question.title
+
     const questionLink = `https://leetcode.com${question.data.activeDailyCodingChallengeQuestion.link}`
+
+    console.log(`Creating Todoist task with title ${questionTitle}`)
+
+    const body = {
+        content: `[${questionTitle}](${questionLink})`,
+        due_string: 'Today',
+    }
 
     const init = {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${TODOIST_API_ENDPOINT}`,
+            'content-type': 'application/json',
+            Authorization: `Bearer ${TODOIST_API_TOKEN}`,
         },
-        body: {
-            content: `[${questionTitle}](${questionLink})`,
-            due_string: 'Today',
-        },
+        body: JSON.stringify(body),
     }
 
-    const response = await fetch(LEETCODE_API_ENDPOINT, init)
+    const response = await fetch(`${TODOIST_API_ENDPOINT}/tasks`, init)
     return response.json()
 }
 
