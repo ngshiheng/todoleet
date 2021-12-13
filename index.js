@@ -2,7 +2,6 @@ import {
     DAILY_CODING_CHALLENGE_QUERY,
     LEETCODE_API_ENDPOINT,
     TODOIST_API_ENDPOINT,
-    TODOIST_TASK_PRIORITY,
 } from './const'
 
 /**
@@ -39,14 +38,14 @@ const createTodoistTask = async question => {
         content: `[${questionTitle}](${questionLink})`,
         description: `Difficulty: ${questionDifficulty}`,
         due_string: 'Today',
-        priority: TODOIST_TASK_PRIORITY,
+        priority: 4,
     }
 
     const init = {
         method: 'POST',
         body: JSON.stringify(body),
         headers: {
-            'Content-Type': 'application/json;charset=UTF-8',
+            'Content-Type': 'application/json',
             Authorization: `Bearer ${TODOIST_API_TOKEN}`,
         },
     }

@@ -1,7 +1,3 @@
-export const TODOIST_TASK_PRIORITY = process.env.TODOIST_TASK_PRIORITY || 4
-
-export const TODOIST_API_TOKEN = process.env.TODOIST_API_TOKEN
-
 export const TODOIST_API_ENDPOINT = 'https://api.todoist.com/rest/v1'
 
 export const LEETCODE_API_ENDPOINT = 'https://leetcode.com/graphql'
