@@ -12,7 +12,11 @@ Install [Wrangler](https://github.com/cloudflare/wrangler#installation) CLI
 
 ## Environment
 
-1. Add `TODOLIST_API_TOKEN` to your `Cloudflare Worker` -> `Settings` -> `Variables`. You can get your Todoist API token from https://todoist.com/app/settings/integrations
+1. Add `TODOIST_API_TOKEN` to your `Cloudflare Worker` -> `Settings` -> `Variables`. You can get your Todoist API token from https://todoist.com/app/settings/integrations.
+
+    ```sh
+    wrangler secret put TODOIST_API_TOKEN
+    ```
 
 2. Add `CF_API_TOKEN` into your repository secrets. You can create your API token from https://dash.cloudflare.com/profile/api-tokens using the `Edit Cloudflare Workers` template. This is only required for [Wrangler actions](https://github.com/marketplace/actions/deploy-to-cloudflare-workers-with-wrangler).
 
