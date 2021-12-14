@@ -1,4 +1,8 @@
-# TodoLeet
+<h1 align="center"><strong>TodoLeet</strong></h1>
+
+<p align="center">
+  <img width="403" height="163" src="https://i.imgur.com/FObZwQJ.png">
+</p>
 
 [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/ngshiheng/todoleet)
 
