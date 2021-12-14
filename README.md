@@ -1,5 +1,7 @@
 # TodoLeet
 
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/ngshiheng/todoleet)
+
 A [Cloudflare Worker](https://developers.cloudflare.com/workers/) project that syncs LeetCode daily coding challenge to your [Todoist](https://todoist.com/).
 
 The worker runs every day at at [00:01 UTC](https://crontab.guru/#1_0_*_*_*) and syncs the daily coding challenge to your Todoist.
