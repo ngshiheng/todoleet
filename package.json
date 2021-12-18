@@ -1,16 +1,16 @@
 {
-  "private": true,
-  "name": "todoleet",
-  "version": "1.0.0",
-  "description": "Sync LeetCode daily coding challenge to Todoist",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --write '**/*.{js,css,json,md}'"
-  },
-  "author": "Jerry Ng <ngshiheng@gmail.com>",
-  "license": "MIT",
-  "devDependencies": {
-    "prettier": "^1.18.2"
-  }
+    "private": true,
+    "name": "todoleet",
+    "version": "1.0.0",
+    "description": "Sync LeetCode daily coding challenge to Todoist",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "format": "prettier --write '**/*.{js,css,json,md}'"
+    },
+    "author": "Jerry Ng <ngshiheng@gmail.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "prettier": "^2.5.1"
+    }
 }
