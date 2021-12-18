@@ -8,7 +8,7 @@
 
 A [Cloudflare Worker](https://developers.cloudflare.com/workers/) project that syncs Daily LeetCoding Challenge to your [Todoist](https://todoist.com/).
 
-The worker runs every day at at [00:01 UTC](https://crontab.guru/#1_0_*_*_*) and syncs the Daily LeetCoding Challenge to your Todoist.
+The worker runs every day at [00:01 UTC](https://crontab.guru/#1_0_*_*_*) and syncs the Daily LeetCoding Challenge to your Todoist.
 
 Read more about the project on [Medium](https://betterprogramming.pub/how-i-sync-daily-leetcoding-challenge-to-todoist-e50784bbcc8).
 
