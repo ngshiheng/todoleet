@@ -6,9 +6,11 @@
 
 [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/ngshiheng/todoleet)
 
-A [Cloudflare Worker](https://developers.cloudflare.com/workers/) project that syncs LeetCode daily coding challenge to your [Todoist](https://todoist.com/).
+A [Cloudflare Worker](https://developers.cloudflare.com/workers/) project that syncs Daily LeetCoding Challenge to your [Todoist](https://todoist.com/).
 
-The worker runs every day at at [00:01 UTC](https://crontab.guru/#1_0_*_*_*) and syncs the daily coding challenge to your Todoist.
+The worker runs every day at at [00:01 UTC](https://crontab.guru/#1_0_*_*_*) and syncs the Daily LeetCoding Challenge to your Todoist.
+
+Read more about the project on [Medium](https://betterprogramming.pub/how-i-sync-daily-leetcoding-challenge-to-todoist-e50784bbcc8).
 
 ## Requirements
 
@@ -49,7 +51,7 @@ Check if a new task is created on your Todoist.
 
 2. This is only required for [Wrangler actions](https://github.com/marketplace/actions/deploy-to-cloudflare-workers-with-wrangler). Add `CF_API_TOKEN` into your GitHub repository secrets. You can create your API token from https://dash.cloudflare.com/profile/api-tokens using the `Edit Cloudflare Workers` template.
 
-3. To publish new changes to your Cloudflare Worker, run `wrangler publish`
+3. To publish any new changes to your Cloudflare Worker, run `wrangler publish`
 
 ## Contributing
 
