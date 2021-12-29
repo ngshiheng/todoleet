@@ -71,6 +71,10 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 -   https://developer.todoist.com/guides/
 -   https://developers.cloudflare.com/workers/
 
+### Is it safe to publish wrangler.toml with `account_id` and `zone_id`?
+
+[Yes](https://github.com/cloudflare/wrangler/issues/209#issuecomment-541654484).
+
 ### How to test cron trigger locally
 
 Currently, there is [no way to test scheduled jobs](https://github.com/cloudflare/wrangler/issues/1945), since we can't fire a scheduled task during development.

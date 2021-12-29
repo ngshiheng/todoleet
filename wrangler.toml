@@ -2,10 +2,10 @@ name = "todoleet"
 type = "webpack"
 
 account_id = ""
-workers_dev = true
-route = ""
-zone_id = ""
 compatibility_date = "2021-12-11"
+route = ""
+workers_dev = false
+zone_id = ""
 
 [triggers]
 crons = ["1 0 * * *"]
