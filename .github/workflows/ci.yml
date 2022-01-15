@@ -12,7 +12,7 @@ jobs:
         steps:
             - uses: actions/checkout@v2
 
-            - name: Setup Node.js
+            - name: Build Using Node.js
               uses: actions/setup-node@v2
               with:
                   node-version: 'lts/*'
