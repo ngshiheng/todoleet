@@ -7,7 +7,7 @@ import {
 /**
  * Sync LeetCode daily coding challenge to Todoist
  */
-const syncLeetCodeCodingChallenge = async event => {
+const syncLeetCodeCodingChallenge = async (event) => {
     const question = await fetchDailyCodingChallenge()
     await createTodoistTask(question)
 }
@@ -25,7 +25,7 @@ const fetchDailyCodingChallenge = async () => {
     return response.json()
 }
 
-const createTodoistTask = async question => {
+const createTodoistTask = async (question) => {
     const questionInfo = question.data.activeDailyCodingChallengeQuestion
 
     const questionTitle = questionInfo.question.title
@@ -54,6 +54,6 @@ const createTodoistTask = async question => {
     return response.json()
 }
 
-addEventListener('scheduled', event => {
+addEventListener('scheduled', (event) => {
     event.waitUntil(syncLeetCodeCodingChallenge(event))
 })

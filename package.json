@@ -1,5 +1,4 @@
 {
-    "private": true,
     "name": "todoleet",
     "version": "0.0.0-development",
     "description": "Sync LeetCode daily coding challenge to Todoist",
