@@ -1,10 +1,28 @@
 <h1 align="center"><strong>TodoLeet</strong></h1>
 
+[![CI](https://github.com/ngshiheng/todoleet/actions/workflows/ci.yml/badge.svg)](https://github.com/ngshiheng/todoleet/actions/workflows/ci.yml)
+[![Release](https://github.com/ngshiheng/todoleet/actions/workflows/release.yml/badge.svg)](https://github.com/ngshiheng/todoleet/actions/workflows/release.yml)
+
+## Table of Contents
+
+- [Table of Contents](#table-of-contents)
+- [Context](#context)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Deployment](#deployment)
+  - [1-Click](#1-click)
+  - [Wrangler CLI](#wrangler-cli)
+- [Contributing](#contributing)
+- [References](#references)
+  - [Is it safe to publish wrangler.toml with `account_id` and `zone_id`?](#is-it-safe-to-publish-wranglertoml-with-account_id-and-zone_id)
+  - [How to test cron trigger locally](#how-to-test-cron-trigger-locally)
+
+## Context
+
 <p align="center">
   <img width="403" height="163" src="https://i.imgur.com/FObZwQJ.png">
 </p>
-
-[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/ngshiheng/todoleet)
 
 A [Cloudflare Worker](https://developers.cloudflare.com/workers/) project that syncs Daily LeetCoding Challenge to your [Todoist](https://todoist.com/).
 
@@ -47,6 +65,12 @@ Check if a new task is created on your Todoist.
 
 ## Deployment
 
+### 1-Click
+
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/ngshiheng/todoleet)
+
+### Wrangler CLI
+
 1. Add `TODOIST_API_TOKEN` using `wrangler secret put TODOIST_API_TOKEN`. You may find the newly added secret under `Cloudflare Worker` -> `Settings` -> `Variables`. You can get your Todoist API token from https://todoist.com/app/settings/integrations.
 
 2. This is only required for [Wrangler actions](https://github.com/marketplace/actions/deploy-to-cloudflare-workers-with-wrangler). Add `CF_API_TOKEN` into your GitHub repository secrets. You can create your API token from https://dash.cloudflare.com/profile/api-tokens using the `Edit Cloudflare Workers` template.
@@ -56,8 +80,6 @@ Check if a new task is created on your Todoist.
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-### Steps
 
 1. Fork this
 2. Create your feature branch (`git checkout -b tommy/fooBar`)
