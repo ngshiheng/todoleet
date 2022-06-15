@@ -9,16 +9,14 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
-
             - name: Setup Node.js
               uses: actions/setup-node@v3
               with:
                   node-version: 'lts/*'
-
+                  cache: npm
             - name: Install dependencies
               run: npm ci
-
-            - name: Release
+            - name: Semantic Release
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

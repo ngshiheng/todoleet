@@ -10,7 +10,7 @@ A [Cloudflare Worker](https://developers.cloudflare.com/workers/) project that s
 
 The worker runs every day at [00:01 UTC](https://crontab.guru/#1_0_*_*_*) and syncs the Daily LeetCoding Challenge to your Todoist.
 
-Read more about the project on [Medium](https://betterprogramming.pub/how-i-sync-daily-leetcoding-challenge-to-todoist-e50784bbcc8).
+[Read more...](https://jerrynsh.com/how-i-sync-daily-leetcoding-challenge-to-todoist/).
 
 ## Requirements
 
@@ -22,7 +22,7 @@ Read more about the project on [Medium](https://betterprogramming.pub/how-i-sync
 The dependencies are only used for development. So the installation is not required.
 
 ```sh
-npm install
+npm ci
 ```
 
 ## Usage
