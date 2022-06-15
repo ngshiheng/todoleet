@@ -1,4 +1,9 @@
-<h1 align="center"><strong>TodoLeet</strong></h1>
+<h2 align="center">TodoLeet</h1>
+<p align="center">
+  <img width="403" height="163" src="https://i.imgur.com/FObZwQJ.png">
+</p>
+
+<div align="center">Syncs Daily LeetCoding Challenge to Todoist.</div>
 
 [![CI](https://github.com/ngshiheng/todoleet/actions/workflows/ci.yml/badge.svg)](https://github.com/ngshiheng/todoleet/actions/workflows/ci.yml)
 [![Release](https://github.com/ngshiheng/todoleet/actions/workflows/release.yml/badge.svg)](https://github.com/ngshiheng/todoleet/actions/workflows/release.yml)
@@ -11,18 +16,15 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Deployment](#deployment)
-  - [1-Click](#1-click)
+  - [1-Click (Experimental)](#1-click-experimental)
   - [Wrangler CLI](#wrangler-cli)
 - [Contributing](#contributing)
 - [References](#references)
+- [FAQ](#faq)
   - [Is it safe to publish wrangler.toml with `account_id` and `zone_id`?](#is-it-safe-to-publish-wranglertoml-with-account_id-and-zone_id)
   - [How to test cron trigger locally](#how-to-test-cron-trigger-locally)
 
 ## Context
-
-<p align="center">
-  <img width="403" height="163" src="https://i.imgur.com/FObZwQJ.png">
-</p>
 
 A [Cloudflare Worker](https://developers.cloudflare.com/workers/) project that syncs Daily LeetCoding Challenge to your [Todoist](https://todoist.com/).
 
@@ -65,7 +67,7 @@ Check if a new task is created on your Todoist.
 
 ## Deployment
 
-### 1-Click
+### 1-Click (Experimental)
 
 [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/ngshiheng/todoleet)
 
@@ -91,6 +93,8 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 -   https://developer.todoist.com/guides/
 -   https://developers.cloudflare.com/workers/
+
+## FAQ
 
 ### Is it safe to publish wrangler.toml with `account_id` and `zone_id`?
 
