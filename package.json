@@ -11,7 +11,7 @@
     "author": "Jerry Ng <ngshiheng@gmail.com>",
     "license": "MIT",
     "devDependencies": {
-        "prettier": "2.6.2"
+        "prettier": "2.7.1"
     },
     "release": {
         "branches": [
