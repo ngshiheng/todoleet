@@ -1,4 +1,8 @@
 <h2 align="center">TodoLeet</h1>
+
+> **NOTE**
+> This project uses `wrangler@v1.x.x`. `wrangler@v2.x.x` was released 1st May 2022, check out the comparison [here](https://developers.cloudflare.com/workers/wrangler/compare-v1-v2/).
+
 <p align="center">
   <img width="403" height="163" src="https://i.imgur.com/FObZwQJ.png">
 </p>
