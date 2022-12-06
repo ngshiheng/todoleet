@@ -1,4 +1,4 @@
-export const TODOIST_API_ENDPOINT = 'https://api.todoist.com/rest/v1'
+export const TODOIST_API_ENDPOINT = 'https://api.todoist.com/rest/v2'
 
 export const LEETCODE_API_ENDPOINT = 'https://leetcode.com/graphql'
 
