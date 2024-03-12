@@ -1,6 +1,7 @@
 {
     "name": "todoleet",
     "version": "0.0.0-development",
+    "private": true,
     "description": "Sync LeetCode daily coding challenge to Todoist",
     "main": "index.js",
     "scripts": {
