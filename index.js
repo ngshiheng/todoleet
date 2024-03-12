@@ -17,11 +17,22 @@ const fetchDailyCodingChallenge = async () => {
 
     const init = {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ query: DAILY_CODING_CHALLENGE_QUERY }),
+        headers: {
+            'Content-Type': 'application/json',
+            'User-Agent': 'TodoLeet/1.0.1',
+        },
+        body: JSON.stringify({
+            query: DAILY_CODING_CHALLENGE_QUERY,
+            operationName: 'questionOfToday',
+        }),
     }
 
     const response = await fetch(LEETCODE_API_ENDPOINT, init)
+    if (!response.ok) {
+        throw new Error(
+            `[${response.status}] Failed to fetch daily coding challenge from LeetCode API.`,
+        )
+    }
     return response.json()
 }
 
@@ -32,7 +43,7 @@ const createTodoistTask = async (question) => {
     const questionDifficulty = questionInfo.question.difficulty
     const questionLink = `https://leetcode.com${questionInfo.link}`
 
-    console.log(`Creating Todoist task with title ${questionTitle}.`)
+    console.log(`Creating Todoist task with title "${questionTitle}".`)
 
     const body = {
         content: `[${questionTitle}](${questionLink})`,
@@ -49,8 +60,10 @@ const createTodoistTask = async (question) => {
             Authorization: `Bearer ${TODOIST_API_TOKEN}`,
         },
     }
-
     const response = await fetch(`${TODOIST_API_ENDPOINT}/tasks`, init)
+    if (!response.ok) {
+        throw new Error(`[${response.status}] Failed to create Todoist task.`)
+    }
     return response.json()
 }
 
