@@ -4,14 +4,15 @@
     "description": "Sync LeetCode daily coding challenge to Todoist",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "format": "prettier --write '**/*.{js,css,json,md}'",
+        "dev": "wrangler dev --test-scheduled --remote",
+        "test": "curl 'http://localhost:8787/__scheduled'",
         "semantic-release": "semantic-release"
     },
     "author": "Jerry Ng <ngshiheng@gmail.com>",
     "license": "MIT",
     "devDependencies": {
-        "prettier": "3.2.5"
+        "prettier": "3.2.5",
+        "wrangler": "^3.32.0"
     },
     "release": {
         "branches": [
