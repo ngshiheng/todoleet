@@ -6,8 +6,7 @@
     "main": "index.js",
     "scripts": {
         "dev": "wrangler dev --test-scheduled --remote",
-        "test": "curl 'http://localhost:8787/__scheduled'",
-        "semantic-release": "semantic-release"
+        "test": "curl 'http://localhost:8787/__scheduled'"
     },
     "author": "Jerry Ng <ngshiheng@gmail.com>",
     "license": "MIT",
