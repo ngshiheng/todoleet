@@ -1,8 +1,5 @@
 <h2 align="center">TodoLeet</h1>
 
-> **NOTE**
-> This project uses `wrangler@v1.x.x`. `wrangler@v2.x.x` was released 1st May 2022, check out the comparison [here](https://developers.cloudflare.com/workers/wrangler/compare-v1-v2/).
-
 <p align="center">
   <img width="403" height="163" src="https://i.imgur.com/FObZwQJ.png">
 </p>
@@ -20,26 +17,32 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Deployment](#deployment)
-  - [1-Click (Experimental)](#1-click-experimental)
   - [Wrangler CLI](#wrangler-cli)
 - [Contributing](#contributing)
 - [References](#references)
 - [FAQ](#faq)
-  - [Is it safe to publish wrangler.toml with `account_id` and `zone_id`?](#is-it-safe-to-publish-wranglertoml-with-account_id-and-zone_id)
-  - [How to test cron trigger locally](#how-to-test-cron-trigger-locally)
+  - [Is it safe to publish wrangler.toml with `account_id`?](#is-it-safe-to-publish-wranglertoml-with-account_id)
 
 ## Context
 
-A [Cloudflare Worker](https://developers.cloudflare.com/workers/) project that syncs Daily LeetCoding Challenge to your [Todoist](https://todoist.com/).
+```mermaid
+graph LR;
+    A[Schedule Event] --> B[Sync LeetCode Coding Challenge];
+    B --> C{Fetch Daily Coding Challenge};
+    C -->|Success| D[Create Todoist Task];
+    C -->|Failure| E[Handle Error];
+    D --> F[Task Created];
+    E --> G[Error Handling];
+```
 
-The worker runs every day at [00:01 UTC](https://crontab.guru/#1_0_*_*_*) and syncs the Daily LeetCoding Challenge to your Todoist.
+A [Cloudflare Worker](https://developers.cloudflare.com/workers/) project that syncs Daily LeetCoding Challenge to your [Todoist](https://todoist.com/). The worker runs every day at [00:01 UTC](https://crontab.guru/#1_0_*_*_*) and syncs the Daily LeetCoding Challenge to your Todoist.
 
 [Read more...](https://jerrynsh.com/how-i-sync-daily-leetcoding-challenge-to-todoist/).
 
 ## Requirements
 
+-   A Cloudflare account
 -   Install [Wrangler](https://github.com/cloudflare/wrangler#installation) CLI for Cloudflare Workers deployment
--   Install [Miniflare](https://miniflare.dev/cli.html) CLI for local development work
 
 ## Installation
 
@@ -51,37 +54,31 @@ npm ci
 
 ## Usage
 
-For local development, create a `.env` file with the following:
-
-```txt
-TODOIST_API_TOKEN="xxxxxxxxxxxxxxxxxxxxxx"
-```
-
 To test out the cron trigger locally, run the following:
 
 ```sh
-# At terminal 1
-miniflare
+# 1. set TODOIST_API_TOKEN
+wrangler login
+wrangler secret put TODOIST_API_TOKEN
 
-# At terminal 2
-curl "http://localhost:8787/.mf/scheduled"
+# 2. run worker
+npm run dev # wrangler dev --test-scheduled --remote
+
+# 3. test scheduled event.
+curl "http://localhost:8787/__scheduled"
+
+# 4. check if a new task is created on your Todoist
 ```
-
-Check if a new task is created on your Todoist.
 
 ## Deployment
 
-### 1-Click (Experimental)
-
-[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/ngshiheng/todoleet)
-
 ### Wrangler CLI
 
-1. Add `TODOIST_API_TOKEN` using `wrangler secret put TODOIST_API_TOKEN`. You may find the newly added secret under `Cloudflare Worker` -> `Settings` -> `Variables`. You can get your Todoist API token from https://todoist.com/app/settings/integrations.
+1. Add `TODOIST_API_TOKEN` using `wrangler secret put TODOIST_API_TOKEN`. You may find the newly added secret under `Cloudflare Worker` -> `Settings` -> `Variables`. You can get your Todoist API token from https://app.todoist.com/app/settings/integrations/developer.
 
 2. This is only required for [Wrangler actions](https://github.com/marketplace/actions/deploy-to-cloudflare-workers-with-wrangler). Add `CF_API_TOKEN` into your GitHub repository secrets. You can create your API token from https://dash.cloudflare.com/profile/api-tokens using the `Edit Cloudflare Workers` template.
 
-3. To publish any new changes to your Cloudflare Worker, run `wrangler publish`
+3. To publish any new changes to your Cloudflare Worker, run `wrangler deploy`
 
 ## Contributing
 
@@ -100,12 +97,6 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## FAQ
 
-### Is it safe to publish wrangler.toml with `account_id` and `zone_id`?
+### Is it safe to publish wrangler.toml with `account_id`?
 
 [Yes](https://github.com/cloudflare/wrangler/issues/209#issuecomment-541654484).
-
-### How to test cron trigger locally
-
-Currently, there is [no way to test scheduled jobs](https://github.com/cloudflare/wrangler/issues/1945), since we can't fire a scheduled task during development.
-
-Alternatively, we could use [Miniflare](https://miniflare.dev/scheduled.html) which supports cron trigger testing.
